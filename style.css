@@ -1,110 +1,115 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-#addform{
-    position: absolute;
-    top: 200px;
-    left: 400px;
-    background-color:  rgba(151, 11, 169, 0.527);
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    display: none;
-}
-#addform input{
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 10px;
-}
-#addform button{
-    padding: 10px;
-    background-color: red;
-    color: white;
-    font-size: 20px;
-    border-radius: 10px;
-}
-button{
-    background-color:  rgba(151, 11, 169, 0.527);
-    color: white;
-    font-size: 18px;
-    padding: 5px 10px 5px 10px;
-    margin-top: 10px;
-    margin-left: 60px;
-}
-
-.search{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.search .search2{
-    margin-right: 50px;
-}
-.search .search2 input{
-    border: 1px solid black;
-    padding: 6px 20px 6px 20px;
-}
-
-.search .search2 select{
-     border: 1px solid black;
-    padding: 5px 20px 5px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; 
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(146, 142, 142);
 }
-#upform{
-    position: absolute;
-    top: 200px;
-    left: 400px;
-    background-color:  rgba(151, 11, 169, 0.527);
-    padding: 20px;
+
+.firstpage {
+  background-color: skyblue;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: rgba(50, 50, 93, 0.25) 10px 5px 20px 10px,
+    rgba(242, 244, 245, 0.951) 0px -2px 6px 0px inset;
+  position: absolute;
+  left: 370px;
+  border-radius: 5%;
+  padding: 20px;
+}
+.firstpage .signupform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 50px;
+  color: white;
+}
+.firstpage .signupform .formo {
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+.firstpage .signupform h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 35px;
+  color: black;
+}
+.firstpage .signupform h1:hover {
+  color: rgba(179, 155, 6, 0.955);
+}
+.firstpage .signupform .foram {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 30px;
+  margin-top: 20px;
+}
+.firstpage .signupform .foram button {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
+  padding: 8px 15px 8px 15px;
+  border-radius: 5px;
+  cursor: grab;
+}
+.firstpage .signupform .foram button:hover {
+  background-color: rgba(179, 6, 75, 0.955);
+  color: white;
+}
+.firstpage .signupform .foram input {
+  border: none;
+  border-bottom: 1px solid rgb(17, 17, 17);
+  padding: 10px 220px 10px 10px;
+}
+.firstpage a {
+  color: rgb(244, 7, 7);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.firstpage a:hover {
+  color: rgba(179, 155, 6, 0.955);
+}
+
+@media screen and (max-width: 768px) {
+  .firstpage {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    height: 530px;
+    width: 700px;
+    position: absolute;
+    left: 40px;
+  }
 }
-#upform input{
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 10px;
-}
-#upform button{
-    padding: 10px;
-    background-color: red;
-    color: white;
-    font-size: 20px;
-    border-radius: 10px;
-}
-.container {
-    margin: 50px;
-}
-
-table {
-    width: 900px;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-td {
-    padding: 10px; 
-    text-align: center; 
-    border: 1px solid #ccc;
-}
-
-tr:hover {
-    background-color: #d1e0e0; 
-}
-
-i {
-    cursor: pointer;
-    font-size: 1.2em;
-}
+@media screen and (max-width: 426px) {
+  .firstpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-top: 50px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    height: 830px;
+    width: 400px;
+    position: absolute;
+    left: 12px;
+  }
+} /*# sourceMappingURL=style.css.map */

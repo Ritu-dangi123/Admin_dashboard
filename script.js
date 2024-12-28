@@ -1,21 +1,124 @@
-//navbar show
-let Open = false;
-function humnavbar() {
-  let nav = document.querySelector(".navbar");
 
-  if (Open) {
-    nav.style.left = "-300px"; 
-  } else {
-    nav.style.left = "0"; 
-  }
 
-  Open = !Open; 
 
-  nav.style.display = "block"
+
+
+let converdata;
+//form validation
+function formvalidet(){
+    let name = document.querySelector('#name').value;
+    let email = document.querySelector('#email').value;
+    let psw = document.querySelector('#psw').value;
+    let cpsw = document.querySelector('#cpsw').value;
+
+
+    if(name === "")
+    {
+        window.alert("Please Enter Your Name")
+        return false;
+    }
+
+    else if(email === "")
+    {
+        window.alert("Please Enter Your Email")
+        return false;
+    }
+
+    else if(!(email.includes('@') && email.includes('.com')))
+    {
+        window.alert("Please Enter Valid Email")
+        return false;
+    }
+
+    else if(psw === "")
+    {
+        window.alert("Please Enter Password")
+        return false;
+    }
+    else if(!
+        (
+            psw.match(/[1234567890]/)
+            &&
+            psw.match(/[!@#$%^&*()~]/)
+            &&
+            psw.match(/[qwertyuiopasdfghjklzxcvbnm]/)
+            &&
+            psw.match(/[QWERTYUIOPASDFGHJKLZXCVBNM]/)
+        )
+    )
+    {
+        window.alert("Please Enter Storng Password")
+        return false;
+    }
+
+    else if(!(psw.length > 5 && psw .length < 16))
+    {
+        window.alert("Password is 6-20 Charecter")
+        return false;
+    }
+
+
+    else if(psw !== cpsw)
+    {
+        window.alert("password and confirm password not match");
+        document.querySelector('#cpsw').value ="";
+        document.querySelector('#psw').value ="";
+        document.querySelector('#psw').focus();
+        return false;
+    }
+
+    //local storage set item
+
+    let name1 = document.querySelector('#name').value;
+    let email1 = document.querySelector('#email').value;
+    let psw1 = document.querySelector('#psw').value;
+    let cpsw1 = document.querySelector('#cpsw').value;
+
+    let data = {
+        name : name1,
+        email : email1,
+        psw : psw1,
+        cpsw : cpsw1
+    }
+
+    let converdata = localStorage.setItem("userdata",JSON.stringify(data))
+
+}
+//form validation end
+
+
+
+// login page function get item
+function localst(){
+    let finaldata = JSON.parse(localStorage.getItem("userdata"));
+
+    let validemail = finaldata.email;
+    let validpsw = finaldata.cpsw;
+
+    let email2 = document.querySelector('#email').value;
+    let cpsw2 = document.querySelector('#cpsw').value;
+
+    if(email2 != validemail)
+    {
+        let error = document.querySelector('#erroremail')
+        error.innerHTML = "*Sorry, we could not find your account";
+        return false;
+    }
+    else if(cpsw2 != validpsw)
+    {
+        let error = document.querySelector('#errorpsw')
+        error.innerHTML = "*Incorrect,Password"
+        return false;
+    }
+}
+// login page function get item end
+
+
+//onblur function login page
+function remove(arg)
+{
+    let selecterror = document.querySelector(`#${arg}`);
+    selecterror.innerHTML = ""
 }
 
-// navbar hide
-function navhide(){
-  let nav = document.querySelector(".navbar");
-  nav.style.display = "none"
-}
+
